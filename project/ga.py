@@ -29,10 +29,10 @@ def f_get_list(item, page):
     &selectOptionList[]=7599&selectOptionList[]=321985&selectOptionList[]=684&selectOptionList[]=666
     &selectOptionList[]=682&selectOptionList[]=32778&selectOptionList[]=37388&selectOptionList[]=32182&selectOptionList[]=321958&goodsCount=916&page='''
     url += str(page)
-    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),options=opt)
 
     # 위에 창 조절 테스트를 위해 임시로 주석처리
-    # driver = webdriver.Chrome('./chromedriver')
+    # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),options=opt)
+    driver = webdriver.Chrome('./chromedriver')
 
     driver.set_window_position(0,0)
     driver.set_window_size(10,10)
@@ -52,7 +52,7 @@ def f_get_list(item, page):
     return item_list
 
 # 검색할 페이지
-searchPage = 2
+searchPage = 5
 # 아이템, 페이지 지정해서 상품 상세보기 링크 리스트에 저장 (다차원 배열)
 for i in range(1, searchPage):
     list_all.append(f_get_list(category['cpu'], i))
