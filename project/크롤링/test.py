@@ -9,9 +9,10 @@ opt = Options()
 opt.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 opt.add_argument("--headless")
 
-# 위에 창 조절 테스트를 위해 임시로 주석처리
-# driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),options=opt)
+# 드라이버세팅
 driver = webdriver.Chrome('./chromedriver')
+html = driver.page_source
+soup = BeautifulSoup(html,'html.parser',from_encoding='utf-8')
 
 driver.set_window_position(0,0)
 driver.set_window_size(10,10)
@@ -29,7 +30,16 @@ with open('test_url_list.csv','r',encoding='utf-8') as f:
 
 print(url)
 
+
+
+
 driver.get(url[0])
+
+table = driver.find_elements_by_xpath('//*[@id="content"]/table[2]/tbody/tr/td')
+
+for i in table:
+    print(i.text)
+    print('------------------')
 
 
 
