@@ -55,25 +55,13 @@ def f_get_list(item, page):
 
 # 검색할 페이지
 searchPage = 5
+
 # 아이템, 페이지 지정해서 상품 상세보기 링크 리스트에 저장 (다차원 배열)
 for i in range(1, searchPage):
-    list_all.append(f_get_list(category['cpu'], i))
+    list_all = f_get_list(category['cpu'], i)
 
-print(list_all)
-
-li_al_len = len(list_all)
-
-# 1차원 배열로 저장
-list_url = []
-
-for i in range(0, int(li_al_len)):
-    for j in list_all[i]:
-        list_url.append(j)
-
-print(list_url)
-print(len(list_url))
 
 # csv 형식으로 url 리스트 저장(코드가 길어서 객체지향 방식으로 작업하기 위해)
 with open('test_url_list.csv', 'w', newline='') as f:
     wri = csv.writer(f)
-    wri.writerow(list_url)
+    wri.writerow(list_all)
