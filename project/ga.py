@@ -8,16 +8,9 @@ opt.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 opt.add_argument("--headless")
 
 
-# set 으로 저장해주기
-cpu = '873'
-main_board = '875'
-memory = '874'
-graphic_card = '876'
-ssd = '32617'
-hdd = '877'
-case = '879'
-power = '880'
-cooler = '887'
+# url 카테고리
+category_url = {'cpu':'873','memory':'874','main':'875','gpu':'876',"hdd":'877','case':'879','power':'880','cooler':'887','ssd':'32617'}
+
 
 list_all = []
 
@@ -43,7 +36,6 @@ def f_get_list(item, page):
 
     driver.set_window_position(0,0)
     driver.set_window_size(10,10)
-
     driver.get(url)
 
     list = driver.find_elements_by_xpath('/html/body/div/div[3]/div[2]/div[2]/table/tbody/tr')
