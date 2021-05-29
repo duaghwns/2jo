@@ -10,7 +10,7 @@ opt.add_argument("--headless")
 
 # 위에 창 조절 테스트를 위해 임시로 주석처리
 # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),options=opt)
-driver = webdriver.Chrome('./chromedriver')
+driver = webdriver.Chrome('../chromedriver')
 
 driver.set_window_position(0,0)
 driver.set_window_size(10,10)
@@ -74,6 +74,6 @@ print(list_url)
 print(len(list_url))
 
 # csv 형식으로 url 리스트 저장(코드가 길어서 객체지향 방식으로 작업하기 위해)
-with open('test_url_list.csv','w',newline='') as f:
+with open('test_url_list.csv', 'w', newline='') as f:
     wri = csv.writer(f)
     wri.writerow(list_url)
