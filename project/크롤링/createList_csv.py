@@ -16,7 +16,7 @@ driver.set_window_position(0,0)
 driver.set_window_size(10,10)
 
 
-# url 카테고리, 59번 라인에 key 값으로 활용
+# url 카테고리, 61번 라인에 key 값으로 활용
 category = {'cpu':'873','memory':'874','main':'875','gpu':'876',"hdd":'877','case':'879','power':'880','cooler':'887','ssd':'32617'}
 
 
