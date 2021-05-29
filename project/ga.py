@@ -9,7 +9,7 @@ opt.add_argument("--headless")
 
 
 # url 카테고리
-category_url = {'cpu':'873','memory':'874','main':'875','gpu':'876',"hdd":'877','case':'879','power':'880','cooler':'887','ssd':'32617'}
+category = {'cpu':'873','memory':'874','main':'875','gpu':'876',"hdd":'877','case':'879','power':'880','cooler':'887','ssd':'32617'}
 
 
 list_all = []
@@ -55,7 +55,7 @@ def f_get_list(item, page):
 searchPage = 2
 # 아이템, 페이지 지정해서 상품 상세보기 링크 리스트에 저장 (다차원 배열)
 for i in range(1, searchPage):
-    list_all.append(f_get_list(memory, i))
+    list_all.append(f_get_list(category['cpu'], i))
 
 print(list_all)
 
