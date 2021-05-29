@@ -1,14 +1,22 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import os
+import csv
 
 # 크롤링 페이지 화면 안보이게 하기
 opt = Options()
 opt.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 opt.add_argument("--headless")
 
+# 위에 창 조절 테스트를 위해 임시로 주석처리
+# driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),options=opt)
+driver = webdriver.Chrome('./chromedriver')
 
-# url 카테고리
+driver.set_window_position(0,0)
+driver.set_window_size(10,10)
+
+
+# url 카테고리, 59번 라인에 key 값으로 활용
 category = {'cpu':'873','memory':'874','main':'875','gpu':'876',"hdd":'877','case':'879','power':'880','cooler':'887','ssd':'32617'}
 
 
@@ -29,14 +37,8 @@ def f_get_list(item, page):
     &selectOptionList[]=7599&selectOptionList[]=321985&selectOptionList[]=684&selectOptionList[]=666
     &selectOptionList[]=682&selectOptionList[]=32778&selectOptionList[]=37388&selectOptionList[]=32182&selectOptionList[]=321958&goodsCount=916&page='''
     url += str(page)
-
-    # 위에 창 조절 테스트를 위해 임시로 주석처리
-    # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),options=opt)
-    driver = webdriver.Chrome('./chromedriver')
-
-    driver.set_window_position(0,0)
-    driver.set_window_size(10,10)
     driver.get(url)
+
 
     list = driver.find_elements_by_xpath('/html/body/div/div[3]/div[2]/div[2]/table/tbody/tr')
 
@@ -59,14 +61,19 @@ for i in range(1, searchPage):
 
 print(list_all)
 
-length = len(list_all)
+li_al_len = len(list_all)
 
 # 1차원 배열로 저장
 list_url = []
 
-for i in range(0, int(length)):
+for i in range(0, int(li_al_len)):
     for j in list_all[i]:
         list_url.append(j)
 
 print(list_url)
 print(len(list_url))
+
+# csv 형식으로 url 리스트 저장(코드가 길어서 객체지향 방식으로 작업하기 위해)
+with open('test_url_list.csv','w',newline='') as f:
+    wri = csv.writer(f)
+    wri.writerow(list_url)
