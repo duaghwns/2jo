@@ -10,7 +10,7 @@ opt.add_argument("--headless")
 
 # 위에 창 조절 테스트를 위해 임시로 주석처리
 # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),options=opt)
-driver = webdriver.Chrome('chromedriver')
+driver = webdriver.Chrome('./chromedriver')
 
 driver.set_window_position(0,0)
 driver.set_window_size(10,10)
@@ -46,7 +46,6 @@ def f_get_list(item, page):
     item_list = []
 
     for i in list:
-        # print(i.get_attribute('class').split("_")[1])
         url = 'http://shop.danawa.com/pc/?controller=estimateDeal&methods=productInformation&productSeq='
         url += str( (i.get_attribute('class').split("_")[1]) )
         item_list.append(url)
