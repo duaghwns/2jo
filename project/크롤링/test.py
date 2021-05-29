@@ -2,7 +2,7 @@ import csv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import os
-import bs4
+from bs4 import BeautifulSoup
 
 # 크롤링 페이지 화면 안보이게 하기
 opt = Options()
@@ -16,6 +16,9 @@ driver = webdriver.Chrome('./chromedriver')
 driver.set_window_position(0,0)
 driver.set_window_size(10,10)
 
+
+
+
 # csv 파일 불러와서 리스트에 다시 담기
 url = []
 with open('test_url_list.csv','r',encoding='utf-8') as f:
@@ -26,5 +29,9 @@ with open('test_url_list.csv','r',encoding='utf-8') as f:
 
 print(url)
 
-def table():
-    driver.get()
+driver.get(url[0])
+
+
+
+
+

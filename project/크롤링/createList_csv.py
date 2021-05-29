@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import os
 import csv
+from webdriver_manager.chrome import ChromeDriverManager
 
 # 크롤링 페이지 화면 안보이게 하기
 opt = Options()
@@ -10,7 +11,7 @@ opt.add_argument("--headless")
 
 # 위에 창 조절 테스트를 위해 임시로 주석처리
 # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),options=opt)
-driver = webdriver.Chrome('./chromedriver')
+driver = webdriver.Chrome(ChromeDriverManager().install())
 
 driver.set_window_position(0,0)
 driver.set_window_size(10,10)
@@ -61,6 +62,6 @@ for i in range(1, searchPage):
 
 
 # csv 형식으로 url 리스트 저장(코드가 길어서 객체지향 방식으로 작업하기 위해)
-with open('test_url_list.csv', 'w', newline='') as f:
+with open('test_url_list1.csv', 'w', newline='') as f:
     wri = csv.writer(f)
     wri.writerow(list_all)
