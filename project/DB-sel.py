@@ -4,7 +4,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.keys import Keys
 
-driver = webdriver.Chrome('./chromedriver')
+driver = webdriver.Chrome('크롤링/chromedriver')
 driver.get('http://shop.danawa.com/virtualestimate/?controller=estimateMain&methods=product&categorySeq=873&categoryDepth=2&marketPlaceSeq=16&pseq=2')
 html = driver.page_source
 soup = BeautifulSoup(html, 'html.parser', from_encoding='utf-8')

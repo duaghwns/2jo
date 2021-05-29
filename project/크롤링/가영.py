@@ -10,7 +10,6 @@ case = '879'
 power = '880'
 cooler = '887'
 
-list_all = []
 
 def f_get_list(item, page):
     url = 'http://shop.danawa.com/virtualestimate/?controller=estimateMain&methods=product&categorySeq='
@@ -33,23 +32,14 @@ def f_get_list(item, page):
     return item_list
 
 
+list_all = []
 # 아이템, 페이지 지정해서 상품 상세보기 링크 리스트에 저장 (다차원 배열)
-for i in range(1, 6):
-    list_all.append(f_get_list(cooler, i))
+for i in range(1, 3):
+    list_all += f_get_list(cooler, i)
 
-# print(list_all)
+print(list_all)
 
-length = len(list_all)
 
-# print(length)
-
-# 1차원 배열로 저장
-list_url = []
-
-for i in range(0, int(length)):
-    for j in list_all[i]:
-        list_url.append(j)
-
-print(list_url)
-print(len(list_url))
+print(list_all)
+print(len(list_all))
 
