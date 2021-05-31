@@ -29,17 +29,24 @@ print(url)
 print(len(url))
 
 
+
 test_data=[]
-
-
 def start(index):
+    data = []
     driver.get(url[index])
     table = driver.find_elements_by_xpath('//*[@id="content"]/table[2]/tbody/tr/td')
     for i in table:
-        test_data.append(i.text)
+        data.append(i.text)
+    test_data.append(data)
+    return test_data
 
-for i in range(1,len(url)):
+
+for i in range(1,3): # testCode: url 1개만 작업
+# for i in range(1,len(url)):
     start(i)
+
+
+
 
 print(test_data)
 # with open('test_data.csv','w'):
