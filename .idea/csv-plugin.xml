@@ -17,13 +17,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/project/크롤링_가영/test_url_list_1.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=":" />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>

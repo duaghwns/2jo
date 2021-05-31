@@ -13,7 +13,7 @@ driver.set_window_position(0,0)
 driver.set_window_size(10,10)
 
 # url 카테고리, 61번 라인에 key 값으로 활용
-category = {'cpu':'873','memory':'874','main':'875','gpu':'876',"hdd":'877','case':'879','power':'880','cooler':'887','ssd':'32617'}
+cate = {'cpu':'873','memory':'874','main':'875','gpu':'876',"hdd":'877','case':'879','power':'880','cool':'887','ssd':'32617'}
 
 
 list_all = []
@@ -66,10 +66,12 @@ def f_get_list(item, page):
 
 
 # 실행 : 돌릴 페이지 수
-searchPage = 16
+searchPage = 157
+gory = 'cool'
 for i in range(1,searchPage):
-    f_get_list(category['cpu'],i)
+    f_get_list(cate[gory],i)
     print(str(i)+'번째 페이지 완료')
+    print(str(searchPage-i) +'번 남음')
 
 
 # 이미지 저장
@@ -93,8 +95,8 @@ g = 1
 for i in imgs:
     sheet.cell(row=g, column=3).value = i
     g += 1
-
-wb.save('부품데이터.xlsx')
+excelName = gory + '_부품데이터.xlsx'
+wb.save(excelName)
 driver.quit()
 
 print('완료')
