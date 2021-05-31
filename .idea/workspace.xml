@@ -4,41 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1db7e54f-7b07-4b5f-9ab6-32a7e232ff63" name="Default Changelist" comment="가격이름이미쥐">
+    <list default="true" id="1db7e54f-7b07-4b5f-9ab6-32a7e232ff63" name="Default Changelist" comment="ㅇㄹㅁ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/25.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/28.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/29.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/30.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/31.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/images/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/부품데이터.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/크롤링/가격이름이미지.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/크롤링/가격이름이미지.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622444925851</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ㅇㄹㅁ">
+      <created>1622450589203</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1622450589204</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,7 +228,8 @@
     <MESSAGE value="카테고리 이동" />
     <MESSAGE value="불필요한 파일 삭제" />
     <MESSAGE value="가격이름이미쥐" />
-    <option name="LAST_COMMIT_MESSAGE" value="가격이름이미쥐" />
+    <MESSAGE value="ㅇㄹㅁ" />
+    <option name="LAST_COMMIT_MESSAGE" value="ㅇㄹㅁ" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -266,5 +241,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="item" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

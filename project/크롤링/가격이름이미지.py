@@ -37,17 +37,20 @@ def f_get_list(item, page):
     &selectOptionList[]=682&selectOptionList[]=32778&selectOptionList[]=37388&selectOptionList[]=32182&selectOptionList[]=321958&goodsCount=916&page='''
     url += str(page)
     driver.get(url)
+    aa = driver.page_source
+    soup = BeautifulSoup(aa, 'html.parser')
     time.sleep(3)
 
     list = driver.find_elements_by_xpath('/html/body/div/div[3]/div[2]/div[2]/table/tbody/tr')
-    div = driver.find_elements_by_class_name('scroll_box')
     img = []
-
-    for i in div:
-        img.append(i.find_elements_by_tag_name('img'))
-
-    print(img)
-
+    table = soup.find('div',class_='scroll_box')
+    tr = table.find_all('tr')
+    for i in tr:
+        try:
+            im = 'http:'+i.find('img')['src']
+            img.append(im)
+        except Exception as e:
+            print(e)
 
     # images
     for i in img:
@@ -61,20 +64,17 @@ def f_get_list(item, page):
         title.append(t)
         price.append(p)
 
-    print(title)
-    print(price)
-    print(imgs[2:])
-
 
 # 실행 : 돌릴 페이지 수
-searchPage = 10
+searchPage = 16
 for i in range(1,searchPage):
     f_get_list(category['cpu'],i)
+    print(str(i)+'번째 페이지 완료')
 
 
 # 이미지 저장
 j=1
-for i in imgs[2:]:
+for i in imgs:
     dload.save(i,f'../images/{j}.jpg')
     j+=1
 
@@ -90,7 +90,7 @@ for i in price:
     sheet.cell(row=g, column=2).value = i
     g += 1
 g = 1
-for i in imgs[2:]:
+for i in imgs:
     sheet.cell(row=g, column=3).value = i
     g += 1
 
