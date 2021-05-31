@@ -65,3 +65,5 @@ for i in range(1, searchPage):
 with open('test_url_list1.csv', 'w', newline='') as f:
     wri = csv.writer(f)
     wri.writerow(list_all)
+
+print('완료')
