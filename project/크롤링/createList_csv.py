@@ -62,8 +62,9 @@ for i in range(1, searchPage):
 
 
 # csv 형식으로 url 리스트 저장(코드가 길어서 객체지향 방식으로 작업하기 위해)
-with open('test_url_list1.csv', 'w', newline='') as f:
+csv_title = 'test_url_list.csv'
+with open(csv_title, 'w', newline='') as f:
     wri = csv.writer(f)
     wri.writerow(list_all)
 
-print('완료')
+print(csv_title+' 생성 완료')
