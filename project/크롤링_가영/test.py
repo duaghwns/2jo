@@ -32,7 +32,6 @@ col_list = []
 col_name = []
 col_value = []
 img_list = []
-col = {}
 
 for i in url:
     driver.get(i)
@@ -58,15 +57,17 @@ print(len(img_list))
 # print(img_list)
 
 for i in range(len(col_name)):
+    col = {}
     for j in range(len(col_name[i])):
         # print((col_name[i][j]).get_text())
         # print((col_value[i][j]).get_text().strip().replace('\t', ''))
         col[(col_name[i][j]).get_text()] = (col_value[i][j]).get_text().strip().replace('\t', '')
         col['상세이미지'] = img_list[j]
 
-        col_list.append(col)
     print(col)
+    col_list.append(col)
 
+print(col_list)
 
 # 엑셀, csv로 저장
 # print(col_list)
