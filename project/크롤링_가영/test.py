@@ -19,7 +19,7 @@ driver.set_window_size(10, 10)
 
 # csv 파일 불러와서 리스트에 다시 담기
 url = []
-with open('test_url_list_1.csv', 'r',encoding='utf-8') as f:
+with open('test_url_list(1, 6).csv', 'r',encoding='utf-8') as f:
     rdr = csv.reader(f)
     for i, line in enumerate(rdr):
         if i == 0:
@@ -71,6 +71,6 @@ print(col_list)
 # 엑셀, csv로 저장
 # print(col_list)
 data = pd.DataFrame(col_list)
-data.to_excel('cpu_test.xlsx')
+data.to_excel('cpu(1, 6).xlsx')
 # # data.to_csv('table_test.csv')
 print(data.head())
