@@ -70,7 +70,7 @@ cur = conn.cursor()
 # mem_name varchar2(20) not null ,
 # mem_pass varchar2(20) not null ,
 # mem_mail varchar2(20) not null ,
-# mem_reg_date date SYSDATE  ,
+# mem_reg_date date DEFAULT SYSDATE  ,
 # mem_sex varchar2(20) not null ,
 # mem_age number not null ,
 # mem_bir date  ,
