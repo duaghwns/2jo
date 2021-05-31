@@ -54,7 +54,7 @@ def f_get_list(item, page):
     return item_list
 
 # 검색할 페이지
-searchPage = 5
+searchPage = 4
 
 # 아이템, 페이지 지정해서 상품 상세보기 링크 리스트에 저장 (다차원 배열)
 for i in range(1, searchPage):

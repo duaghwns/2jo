@@ -19,7 +19,7 @@ driver.set_window_size(10, 10)
 
 # csv 파일 불러와서 리스트에 다시 담기
 url = []
-with open('test_url_list(1, 6).csv', 'r',encoding='utf-8') as f:
+with open('cpu(5, 11).csv', 'r',encoding='utf-8') as f:
     rdr = csv.reader(f)
     for i, line in enumerate(rdr):
         if i == 0:
@@ -41,8 +41,14 @@ for i in url:
     table = soup.find("table", attrs={"class" : "table700_border"})
 
     # 이미지 가져오기
-    span = driver.find_element_by_class_name('prod_info_image')
-    img_list.append(span.find_element_by_tag_name('img').get_attribute('src'))
+    try:
+        span = driver.find_element_by_class_name('prod_info_image')
+
+        if span != None:
+            img_list.append(span.find_element_by_tag_name('img').get_attribute('src'))
+
+    except Exception as e:
+        img_list.append('')
 
     # 컬럼명, 데이터 가져오기
     col_name.append(table.find_all("td", attrs={"class" : "bg_grey"}))
@@ -61,7 +67,7 @@ for i in range(len(col_name)):
         # print((col_name[i][j]).get_text())
         # print((col_value[i][j]).get_text().strip().replace('\t', ''))
         col[(col_name[i][j]).get_text()] = (col_value[i][j]).get_text().strip().replace('\t', '')
-        col['상세이미지'] = img_list[j]
+        col['상세이미지'] = img_list[i]
 
     print(col)
     col_list.append(col)
@@ -71,6 +77,6 @@ print(col_list)
 # 엑셀, csv로 저장
 # print(col_list)
 data = pd.DataFrame(col_list)
-data.to_excel('cpu(1, 6).xlsx')
+data.to_excel('cpu(5, 11).xlsx')
 # # data.to_csv('table_test.csv')
 print(data.head())
