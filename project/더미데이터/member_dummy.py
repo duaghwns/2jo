@@ -30,6 +30,8 @@ def name():
 
 # 성별
 sexx = ['M','F']
+# 목적
+purp = ['GAME', 'WORD', 'STREAM', 'ETC']
 # 더미 컬럼
 id = []
 names = []
@@ -37,6 +39,7 @@ ages = []
 password = []
 mail = []
 sex = []
+pur = []
 hp = []
 
 # 리스트에 넣기
@@ -46,6 +49,7 @@ for i in range(30):
     ages.append(random.randrange(15,60))
     password.append('0000')
     sex.append(random.choice(sexx))
+    pur.append(random.choice(purp))
     hp.append('010-1234-5678')
 
 # 메일넣기
@@ -74,6 +78,7 @@ cur = conn.cursor()
 # mem_add1 varchar2(20) not null ,
 # mem_add2 varchar2(50) not null ,
 # mem_hp varchar2(20)  ,
+# mem_purpose varchar2(20) not null,
 # mem_mileage number default 0 ,
 # mem_delete varchar2(20) default 'N'
 # )
@@ -89,13 +94,14 @@ def insertId(j):
     a+= str(ages[j]) +", "
     a+= "'" + sex[j] +"', "
     a+= "'" + hp[j] +"',"
-    a+= "000000, 'asdf','asdf'"
+    a+= "000000, 'asdf','asdf',"
+    a+= "'" + pur[j] + "'"
     return a
 
 
 def colm(i):
     columnList = ''
-    columnList +=  "insert into member (mem_id, mem_name, mem_pass, mem_mail, mem_age, mem_sex, mem_hp, mem_zip, mem_add1, mem_add2) " \
+    columnList +=  "insert into member (mem_id, mem_name, mem_pass, mem_mail, mem_age, mem_sex, mem_hp, mem_zip, mem_add1, mem_add2, mem_purpose) " \
                    "values (" + insertId(i) + ") "
     return columnList
 
