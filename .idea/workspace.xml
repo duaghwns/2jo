@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1db7e54f-7b07-4b5f-9ab6-32a7e232ff63" name="Default Changelist" comment="이미지 url 넣기 성그옹">
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
+    <list default="true" id="1db7e54f-7b07-4b5f-9ab6-32a7e232ff63" name="Default Changelist" comment="카테고리 이름 수정 남은횟수 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/크롤링/가격이름이미지.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/크롤링/가격이름이미지.py" afterDir="false" />
     </list>
@@ -215,7 +214,21 @@
       <option name="project" value="LOCAL" />
       <updated>1622454926652</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="카테고리 이름 수정 남은횟수 추가">
+      <created>1622468538372</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1622468538372</updated>
+    </task>
+    <task id="LOCAL-00009" summary="카테고리 이름 수정 남은횟수 추가">
+      <created>1622468625388</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1622468625388</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,7 +251,8 @@
     <MESSAGE value="가격이름이미쥐" />
     <MESSAGE value="ㅇㄹㅁ" />
     <MESSAGE value="이미지 url 넣기 성그옹" />
-    <option name="LAST_COMMIT_MESSAGE" value="이미지 url 넣기 성그옹" />
+    <MESSAGE value="카테고리 이름 수정 남은횟수 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="카테고리 이름 수정 남은횟수 추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
