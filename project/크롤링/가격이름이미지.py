@@ -76,7 +76,7 @@ for i in range(1,searchPage+1):
 # 이미지 저장
 j=1
 for i in imgs:
-    dload.save(i,f'../images/{j}.jpg')
+    dload.save(i,f'../images/{gory}_{j}.jpg')
     j+=1
 
 wb = openpyxl.Workbook()
@@ -94,7 +94,7 @@ g = 1
 for i in imgs:
     sheet.cell(row=g, column=3).value = i
     g += 1
-excelName = gory + '_부품데이터.xlsx'
+excelName = './부품데이터/' + gory + '_부품데이터.xlsx'
 wb.save(excelName)
 driver.quit()
 
