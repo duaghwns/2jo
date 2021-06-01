@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import os
 import pandas as pd
 
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 # driver = webdriver.Chrome(ChromeDriverManager().install())
 
 # 크롤링 페이지 화면 안보이게 하기
@@ -14,7 +14,7 @@ opt.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 opt.add_argument("--headless")
 
 # 위에 창 조절 테스트를 위해 임시로 주석처리
-driver = webdriver.Chrome('./chromedriver_2')
+driver = webdriver.Chrome('./chromedriver.exe')
 
 driver.implicitly_wait(5)
 
@@ -26,7 +26,7 @@ driver.set_window_size(10, 10)
 
 # csv 파일 불러와서 리스트에 다시 담기
 url = []
-with open('memory(11, 21).csv', 'r', encoding='utf-8') as f:
+with open('./memory/memory(46).csv', 'r', encoding='utf-8') as f:
     rdr = csv.reader(f)
     for i, line in enumerate(rdr):
         if i == 0:
@@ -83,6 +83,6 @@ for i in range(len(col_name)):
 # 엑셀, csv로 저장
 # print(col_list)
 data = pd.DataFrame(col_list)
-data.to_excel('memory(11, 21).xlsx')
+data.to_excel('memory(46).xlsx')
 # # data.to_csv('table_test.csv')
 print(data.head())

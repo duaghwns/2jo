@@ -11,7 +11,8 @@ opt.add_argument("--headless")
 # 위에 창 조절 테스트를 위해 임시로 주석처리
 # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"),options=opt)
 # driver = webdriver.Chrome(ChromeDriverManager().install())
-driver = webdriver.Chrome('./chromedriver_2')
+# driver = webdriver.Chrome('./chromedriver_2')
+driver = webdriver.Chrome('./chromedriver.exe')
 
 driver.set_window_position(0,0)
 driver.set_window_size(10,10)
@@ -54,16 +55,16 @@ def f_get_list(item, page):
     return item_list
 
 # 검색할 페이지
-searchPage = 54
+searchPage = 83
 
 # 아이템, 페이지 지정해서 상품 상세보기 링크 리스트에 저장 (다차원 배열)
-for i in range(51, searchPage):
-    list_all += f_get_list(category['main'], i)
+for i in range(1, searchPage):
+    list_all += f_get_list(category['ssd'], i)
 
 
 # csv 형식으로 url 리스트 저장(코드가 길어서 객체지향 방식으로 작업하기 위해)
-csv_title = 'mainboard(51, 54).csv'
-with open('./mainboard/' + csv_title, 'w', newline='') as f:
+csv_title = 'ssd(83).csv'
+with open('./ssd/' + csv_title, 'w', newline='') as f:
     wri = csv.writer(f)
     wri.writerow(list_all)
 
