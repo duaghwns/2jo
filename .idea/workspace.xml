@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1db7e54f-7b07-4b5f-9ab6-32a7e232ff63" name="Default Changelist" comment="가영이 코드 수정">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/크롤링/가격이름이미지.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/크롤링/가격이름이미지.py" afterDir="false" />
+    <list default="true" id="1db7e54f-7b07-4b5f-9ab6-32a7e232ff63" name="Default Changelist" comment="약간의 수정">
       <change beforePath="$PROJECT_DIR$/project/크롤링_가영/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/크롤링_가영/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -243,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622512044428</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="약간의 수정">
+      <created>1622526062435</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1622526062435</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,7 +274,8 @@
     <MESSAGE value="카테고리 이름 수정 남은횟수 추가" />
     <MESSAGE value="파일 저장 경로지정 카테고리별 사진 저장" />
     <MESSAGE value="가영이 코드 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="가영이 코드 수정" />
+    <MESSAGE value="약간의 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="약간의 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
