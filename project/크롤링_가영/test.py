@@ -14,7 +14,7 @@ opt.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 opt.add_argument("--headless")
 
 # 위에 창 조절 테스트를 위해 임시로 주석처리
-driver = webdriver.Chrome('./chromedriver.exe')
+driver = webdriver.Chrome('./chromedriver_2')
 
 driver.implicitly_wait(5)
 
@@ -23,12 +23,10 @@ driver.implicitly_wait(5)
 driver.set_window_position(0, 0)
 driver.set_window_size(10, 10)
 
-category = 'memory'
-page = 46
 
 # csv 파일 불러와서 리스트에 다시 담기
 url = []
-with open(f'./{category}/{category}({page}).csv', 'r', encoding='utf-8') as f:
+with open('cooler/cooler(157).csv', 'r', encoding='utf-8') as f:
     rdr = csv.reader(f)
     for i, line in enumerate(rdr):
         if i == 0:
@@ -85,6 +83,6 @@ for i in range(len(col_name)):
 # 엑셀, csv로 저장
 # print(col_list)
 data = pd.DataFrame(col_list)
-data.to_excel(f'{category}({page}).xlsx')
+data.to_excel('cooler(157).xlsx')
 # # data.to_csv('table_test.csv')
 print(data.head())
