@@ -69,15 +69,15 @@ searchPage = 44
 gory = 'power'
 for i in range(1,searchPage+1):
     f_get_list(cate[gory],i)
-    print(str(i)+'번째 페이지 완료')
+    print(f'{i}번째 페이지 완료')
     print(str(searchPage-i) +'번 남음')
 
 
 # 이미지 저장
-j=1
-for i in imgs:
-    dload.save(i,f'../images/{gory}_{j}.jpg')
-    j+=1
+# j=1
+# for i in imgs:
+#     dload.save(i,f'../images/{gory}_{j}.jpg')
+#     j+=1
 
 wb = openpyxl.Workbook()
 sheet = wb.active
@@ -94,7 +94,7 @@ g = 1
 for i in imgs:
     sheet.cell(row=g, column=3).value = i
     g += 1
-excelName = './부품데이터/' + gory + '_부품데이터.xlsx'
+excelName = f'./부품데이터/{gory}_부품데이터.xlsx'
 wb.save(excelName)
 driver.quit()
 

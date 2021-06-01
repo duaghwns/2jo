@@ -13,22 +13,20 @@ opt = Options()
 opt.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 opt.add_argument("--headless")
 
-# 위에 창 조절 테스트를 위해 임시로 주석처리
-driver = webdriver.Chrome('./chromedriver.exe')
 
-driver.implicitly_wait(5)
-
-# driver = webdriver.Chrome('../크롤링/chromedriver') # hojoon
-
+# driver = webdriver.Chrome('./chromedriver.exe')
+driver = webdriver.Chrome('../크롤링/chromedriver') # hojoon
+# driver.implicitly_wait(5)
 driver.set_window_position(0, 0)
 driver.set_window_size(10, 10)
 
-category = 'memory'
-page = 46
+u = 'power'
+category = 'power'
+page = 45
 
 # csv 파일 불러와서 리스트에 다시 담기
 url = []
-with open(f'./{category}/{category}({page}).csv', 'r', encoding='utf-8') as f:
+with open(f'./{u}/{category}({page}).csv', 'r', encoding='utf-8') as f:
     rdr = csv.reader(f)
     for i, line in enumerate(rdr):
         if i == 0:
@@ -41,6 +39,7 @@ col_name = []
 col_value = []
 img_list = []
 
+z = 0
 for i in url:
     driver.get(i)
 
@@ -61,30 +60,23 @@ for i in url:
     # 컬럼명, 데이터 가져오기
     col_name.append(table.find_all("td", attrs={"class" : "bg_grey"}))
     col_value.append(table.find_all("td", attrs={"bgcolor" : "#ffffff"}))
+    z+=1
+    print(f'{len(url)-z} 번 남았습니다.')
 
 print(len(col_name))
 print(len(col_value))
 print(len(img_list))
-# print(col_name)
-# print(col_value)
-# print(img_list)
 
 for i in range(len(col_name)):
     col = {}
     for j in range(len(col_name[i])):
-        # print((col_name[i][j]).get_text())
-        # print((col_value[i][j]).get_text().strip().replace('\t', ''))
         col[(col_name[i][j]).get_text()] = (col_value[i][j]).get_text().strip().replace('\t', '')
         col['상세이미지'] = img_list[i]
 
-    # print(col)
     col_list.append(col)
 
-# print(col_list)
 
 # 엑셀, csv로 저장
-# print(col_list)
 data = pd.DataFrame(col_list)
 data.to_excel(f'{category}({page}).xlsx')
-# # data.to_csv('table_test.csv')
 print(data.head())
