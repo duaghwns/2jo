@@ -16,9 +16,9 @@ driver = webdriver.Chrome('./chromedriver') # hojoon
 driver.set_window_position(0, 0)
 driver.set_window_size(10, 10)
 
-u = 'power'
-category = 'power'
-page = 45
+u ='mainboard'
+category = 'main'
+page = 54
 
 # csv 파일 불러와서 리스트에 다시 담기
 url = []

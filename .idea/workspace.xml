@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1db7e54f-7b07-4b5f-9ab6-32a7e232ff63" name="Default Changelist" comment="약간의 수정">
-      <change beforePath="$PROJECT_DIR$/project/크롤링_가영/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/크롤링_가영/test.py" afterDir="false" />
+    <list default="true" id="1db7e54f-7b07-4b5f-9ab6-32a7e232ff63" name="Default Changelist" comment="table skip 해결">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/크롤링/detail_img_url_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/크롤링/detail_img_url_version.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,16 +32,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/project/크롤링" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project/크롤링" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/project/크롤링" />
       <recent name="$PROJECT_DIR$/project/크롤링/category" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.detail_img_url_version">
     <configuration name="가격이름이미지" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Github" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -75,6 +79,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project/크롤링/createList_csv.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="detail_img_url_version" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Github" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/project/크롤링" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/project/크롤링/detail_img_url_version.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,6 +173,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.detail_img_url_version" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.가격이름이미지" />
         <item itemvalue="Python.item_table_csv" />
@@ -248,7 +274,35 @@
       <option name="project" value="LOCAL" />
       <updated>1622526062435</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="약간의 수정">
+      <created>1622526433834</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1622526433834</updated>
+    </task>
+    <task id="LOCAL-00014" summary="엑셀 내용 바꼇쥬?">
+      <created>1622535887625</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622535887625</updated>
+    </task>
+    <task id="LOCAL-00015" summary="상세이미지 url로 수정">
+      <created>1622543698041</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1622543698041</updated>
+    </task>
+    <task id="LOCAL-00016" summary="table skip 해결">
+      <created>1622599966403</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1622599966403</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,7 +329,10 @@
     <MESSAGE value="파일 저장 경로지정 카테고리별 사진 저장" />
     <MESSAGE value="가영이 코드 수정" />
     <MESSAGE value="약간의 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="약간의 수정" />
+    <MESSAGE value="엑셀 내용 바꼇쥬?" />
+    <MESSAGE value="상세이미지 url로 수정" />
+    <MESSAGE value="table skip 해결" />
+    <option name="LAST_COMMIT_MESSAGE" value="table skip 해결" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
