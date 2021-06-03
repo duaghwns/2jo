@@ -27,8 +27,8 @@ time.sleep(5)
 driver.set_window_position(0, 0)
 driver.set_window_size(10, 10)
 
-category = 'cooler'
-page = 157
+category = 'case'
+page = 65
 
 # csv 파일 불러와서 리스트에 다시 담기
 url = []
