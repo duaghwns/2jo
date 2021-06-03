@@ -29,9 +29,9 @@ with open(f'../크롤링_가영/{u}/{category}({page}).csv', 'r', encoding='utf-
             url = line
 
 # test
-# url = url[0:3]
-# print(url)
-# print(len(url))
+url = url[0:3]
+print(url)
+print(len(url))
 
 col_list = []
 col_name = []
@@ -43,23 +43,17 @@ for i in url:
     driver.get(i)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    try:
-        table = soup.find("table", attrs={"class" : "table700_border"})
-        if table == None:
-            table = soup.find("table", attrs={'class':'table700'})
-    except Exception as e:
-        print(e)
+    table = soup.find("table", attrs={"class" : "table700_border"})
 
     # 상세 이미지에 넣을 url 정보 리스트에 추가하기
     img_list.append(i)
-    # print(f'image url : {i}')
+    print(f'image url : {i}')
 
     # 컬럼명, 데이터 가져오기
     col_name.append(table.find_all("td", attrs={"class" : "bg_grey"}))
     col_value.append(table.find_all("td", attrs={"bgcolor" : "#ffffff"}))
     z+=1
     print(f'{len(url)-z} 번 남았습니다.')
-
 
 print(len(col_name))
 print(len(col_value))
@@ -74,7 +68,7 @@ for i in range(len(col_name)):
     col_list.append(col)
 print(col_list)
 
-# 엑셀, csv로 저장
-data = pd.DataFrame(col_list)
-data.to_excel(f'{category}({page})0602.xlsx')
-print(data.head())
+# # 엑셀, csv로 저장
+# data = pd.DataFrame(col_list)
+# data.to_excel(f'{category}({page}).xlsx')
+# print(data.head())
