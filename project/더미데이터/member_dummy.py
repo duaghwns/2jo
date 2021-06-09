@@ -33,17 +33,38 @@ sexx = ['M','F']
 # 더미 컬럼
 id = []
 names = []
-ages = []
+purpose = []
 password = []
 mail = []
 sex = []
 hp = []
+bir = []
+
+pur = ['GAME','WORD','STREAM','ETC']
+def birth():
+    rst =''
+    year = random.randint(1950,2000)
+    month = random.randint(1,12)
+    day = random.randint(1,31)
+
+    if month > 9:
+        rst += str(year) +"-" + str(month)
+    else:
+        rst += str(year) +"-0" + str(month)
+    if day > 9:
+        rst += "-" +str(day)
+    else:
+        rst += "-0" + str(day)
+    return rst
+
+print(birth())
 
 # 리스트에 넣기
 for i in range(30):
     id.append('dummy00'+str(i))
+    bir.append(birth())
     names.append(name())
-    ages.append(random.randrange(15,60))
+    purpose.append(pur[random.randint(0,3)])
     password.append('0000')
     sex.append(random.choice(sexx))
     hp.append('010-1234-5678')
@@ -60,42 +81,40 @@ cur = conn.cursor()
 
 # 멤버 테이블 생성
 
-# cur.execute('''
-# create table member (
-# mem_id varchar2(20) primary key ,
-# mem_name varchar2(20) not null ,
-# mem_pass varchar2(20) not null ,
-# mem_mail varchar2(20) not null ,
-# mem_reg_date date SYSDATE  ,
-# mem_sex varchar2(20) not null ,
-# mem_age number not null ,
-# mem_bir date  ,
-# mem_zip varchar2(20) not null ,
-# mem_add1 varchar2(20) not null ,
-# mem_add2 varchar2(50) not null ,
-# mem_hp varchar2(20)  ,
-# mem_mileage number default 0 ,
-# mem_delete varchar2(20) default 'N'
-# )
-# ''')
-
-
+cur.execute('''
+create table MEMBER (
+mem_id varchar2(20) primary key ,
+mem_name varchar2(20) not null ,
+mem_pass varchar2(20) not null ,
+mem_mail varchar2(20) not null ,
+mem_reg_date date default sysdate ,
+mem_sex varchar2(20) not null ,
+mem_bir date  ,
+mem_zip varchar2(20) not null ,
+mem_add1 varchar2(20) not null ,
+mem_add2 varchar2(50)  ,
+mem_hp varchar2(20) not null ,
+mem_purpose varchar2(20) not null ,
+mem_mileage number default 0 ,
+mem_delete varchar2(20) default 'N'
+)
+''')
 
 def insertId(j):
     a = "'" + id[j] + "' ,"
+    a += "'" + bir[j] + "', "
     a+= "'" + names[j] +"', "
     a+= "'" + password[j] +"', "
     a+= "'" + mail[j] +"', "
-    a+= str(ages[j]) +", "
+    a+= "'" + purpose[j] +"', "
     a+= "'" + sex[j] +"', "
     a+= "'" + hp[j] +"',"
     a+= "000000, 'asdf','asdf'"
     return a
 
-
 def colm(i):
     columnList = ''
-    columnList +=  "insert into member (mem_id, mem_name, mem_pass, mem_mail, mem_age, mem_sex, mem_hp, mem_zip, mem_add1, mem_add2) " \
+    columnList +=  "insert into member (mem_id, mem_bir ,mem_name, mem_pass, mem_mail, mem_purpose, mem_sex, mem_hp, mem_zip, mem_add1, mem_add2) " \
                    "values (" + insertId(i) + ") "
     return columnList
 
