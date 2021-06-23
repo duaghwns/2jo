@@ -65,8 +65,8 @@ def f_get_list(item, page):
 cate = {'cpu':'873','memory':'874','main':'875','gpu':'876',"hdd":'877','case':'879','power':'880','cool':'887','ssd':'32617'}
 
 # 실행 : 돌릴 페이지 수
-searchPage = 44
-gory = 'power'
+searchPage = 35
+gory = 'gpu'
 for i in range(1,searchPage+1):
     f_get_list(cate[gory],i)
     print(f'{i}번째 페이지 완료')
